@@ -1,0 +1,17 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        
+        if(nums==null) return;
+            
+        int modular= k % nums.length;
+        
+        if(modular == 0){
+          return;  
+        }
+        
+        int [] arr1 = new int[modular];
+        System.arraycopy(nums,nums.length-modular,arr1,0,modular);
+        System.arraycopy(nums,0,nums,modular,nums.length-modular);
+        System.arraycopy(arr1,0,nums,0,modular);
+    }
+}
