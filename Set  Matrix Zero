@@ -1,0 +1,24 @@
+class Solution {
+    public void setZeroes(int[][] mat) {
+        int m=mat.length;
+        int n=mat[0].length;
+        Set<Integer> p=new HashSet<>();
+        Set<Integer> r=new HashSet<>();
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(mat[i][j]==0){
+                    p.add(i);
+                    r.add(j);
+                }
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(p.contains(i)||r.contains(j)){
+                    mat[i][j]=0;
+                }
+            }
+        }
+        
+    }
+}
