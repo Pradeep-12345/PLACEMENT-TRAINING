@@ -1,0 +1,13 @@
+class Solution {
+       List<Integer> p=new ArrayList<Integer>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+     if(root==null){
+        return p;
+    }else{
+        inorderTraversal(root.left);
+        p.add(root.val); 
+        inorderTraversal(root.right);
+        return p;
+    }
+}
+}
